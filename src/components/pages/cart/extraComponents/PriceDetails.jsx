@@ -1,7 +1,21 @@
 import React from 'react'
 import styles from "./PriceDetails.module.css"
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 const PriceDetails = ({cartValue}) => {
+  const navigate=useNavigate();
+  const clickHandler=()=>
+  {
+    let temp=localStorage.getItem("Flipkartuser");
+    console.log(temp)
+    if(!temp)
+    {
+      navigate("/login")   
+    }
+    else
+    {
+      navigate("/payment")
+    }
+  }
   return (
     <section className={styles["price-details"]}>
       <h2 className={styles["price-heading"]}>Price Details</h2>
@@ -26,7 +40,7 @@ const PriceDetails = ({cartValue}) => {
        </div>
        <hr />
        <div className={styles["row-payment"]}>
-        <Link>Proceed to payment</Link>
+        <button onClick={clickHandler}>Proceed to payment</button>
        </div>
        
     </section>

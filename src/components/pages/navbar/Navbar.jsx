@@ -1,9 +1,28 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 const Navbar = () => {
+  const navigate=useNavigate();
+  const [val,setVal]=useState("");
   const {cart}=useSelector(state=>state);
+  const push=()=>
+  {
+    if(val.trim()==="")
+    {
+
+    }
+    else
+    {
+      navigate(`/CatProducts/${val}`);
+    }
+    
+    
+  }
+  useEffect(()=>
+  {
+
+  },[])
   return (
     <div className={styles["nav-container"]}>
       <nav className={styles["navbar"]}>
@@ -16,8 +35,10 @@ const Navbar = () => {
               type="text"
               placeholder="Search here..."
               className={styles["input"]}
+              value={val}
+              onChange={(e)=>setVal(e.target.value)}
             />
-            <a className={styles["search-btn"]} href="#">
+            <a className={styles["search-btn"]} onClick={push}>
               <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
             </a>
           </div>

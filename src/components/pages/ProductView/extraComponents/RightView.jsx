@@ -10,10 +10,10 @@ const RightView = ({data}) => {
   return (
     <section className={styles["right-container"]}>
       <section className={styles["brand-name"]}>Flipkar SmartBuy</section>
-      <h3 className={styles["title"]}>{data.title}</h3>
+      <h3 className={styles["title"]}>{data?.title}</h3>
       <section className={styles["special-offer"]}>Special offer</section>
       <section className={styles["price-holder"]}>
-        <h2>Rs: {data.price}</h2>
+        <h2>Rs: {data?.price}</h2>
         <span className={styles["actual-price"]}>Rs4000</span>
         <span className={styles["offer"]}>
           {Math.ceil(Math.random() * 100)}% Off
@@ -43,7 +43,7 @@ const RightView = ({data}) => {
       </section>
       <section className={styles["below-offer"]}>
         <div className={styles["first"]}>
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZWxsaXBzZSBjeD0iOSIgY3k9IjE0LjQ3OCIgZmlsbD0iI0ZGRTExQiIgcng9IjkiIHJ5PSIzLjUyMiIvPjxwYXRoIGZpbGw9IiMyODc0RjAiIGQ9Ik04LjYwOSA3LjAxYy0xLjA4IDAtMS45NTctLjgyNi0xLjk1Ny0xLjg0NSAwLS40ODkuMjA2LS45NTguNTczLTEuMzA0YTIuMDIgMi4wMiAwIDAgMSAxLjM4NC0uNTRjMS4wOCAwIDEuOTU2LjgyNSAxLjk1NiAxLjg0NCAwIC40OS0uMjA2Ljk1OS0uNTczIDEuMzA1cy0uODY0LjU0LTEuMzgzLjU0ek0zLjEzIDUuMTY1YzAgMy44NzQgNS40NzkgOC45MjIgNS40NzkgOC45MjJzNS40NzgtNS4wNDggNS40NzgtOC45MjJDMTQuMDg3IDIuMzEzIDExLjYzNCAwIDguNjA5IDAgNS41ODMgMCAzLjEzIDIuMzEzIDMuMTMgNS4xNjV6Ii8+PC9nPjwvc3ZnPg==" alt="location" /> Deliver to
+            <img className="" styles={{width:"50px",height:"40px"}} src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZWxsaXBzZSBjeD0iOSIgY3k9IjE0LjQ3OCIgZmlsbD0iI0ZGRTExQiIgcng9IjkiIHJ5PSIzLjUyMiIvPjxwYXRoIGZpbGw9IiMyODc0RjAiIGQ9Ik04LjYwOSA3LjAxYy0xLjA4IDAtMS45NTctLjgyNi0xLjk1Ny0xLjg0NSAwLS40ODkuMjA2LS45NTguNTczLTEuMzA0YTIuMDIgMi4wMiAwIDAgMSAxLjM4NC0uNTRjMS4wOCAwIDEuOTU2LjgyNSAxLjk1NiAxLjg0NCAwIC40OS0uMjA2Ljk1OS0uNTczIDEuMzA1cy0uODY0LjU0LTEuMzgzLjU0ek0zLjEzIDUuMTY1YzAgMy44NzQgNS40NzkgOC45MjIgNS40NzkgOC45MjJzNS40NzgtNS4wNDggNS40NzgtOC45MjJDMTQuMDg3IDIuMzEzIDExLjYzNCAwIDguNjA5IDAgNS41ODMgMCAzLjEzIDIuMzEzIDMuMTMgNS4xNjV6Ii8+PC9nPjwvc3ZnPg==" alt="location" /> Deliver to
         </div>
         <div className={styles["second"]}>
             <span className={styles["services"]}>Services</span>
@@ -64,7 +64,7 @@ const RightView = ({data}) => {
         <div className={styles["toggle"]} onClick={toggle}>
            <h3>Product Description</h3> {!show ?<i class="fa-solid fa-angle-down"></i>:<i class="fa-solid fa-angle-up"></i>} 
         </div>
-       {show && <p> {data.description}
+       {show && <p> {data?.description}
         </p> }
       </section>
     </section>

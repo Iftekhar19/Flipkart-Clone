@@ -9,11 +9,11 @@ const LeftView = ({data}) => {
   const buyNow=()=>
   {
     let obj={
-      id:data.id,
-      title:data.title,
+      id:data?.id,
+      title:data?.title,
       quantity:1,
-      image:data.image,
-      price:data.price
+      image:data?.image,
+      price:data?.price
     }
     dispatch({type:"ADD_TO_CART",payload:obj});
     setToggle(true)
@@ -25,18 +25,18 @@ const LeftView = ({data}) => {
   const buyNow2=()=>
   {
     let obj={
-      id:data.id,
-      title:data.title,
+      id:data?.id,
+      title:data?.title,
       quantity:1,
-      image:data.image,
-      price:data.price
+      image:data?.image,
+      price:data?.price
     }
     dispatch({type:"ADD_TO_CART",payload:obj});
     navigate("/cart")
   }
   return (
     <section className={styles["left-container"]}>
-      <img className={styles["img"]} src={data.image} alt="" />
+      <img className={styles["img"]} src={data?.image} alt="" />
       <section className={styles["actions-container"]}>
          {!toggle ?<button className={styles["add-to-cart"]} onClick={buyNow}>add to cart</button>:<button className={styles["add-to-cart"]} onClick={goToCart}>go to cart</button>}
          <button className={styles["buy-now"]} onClick={buyNow2}>Buy now</button>

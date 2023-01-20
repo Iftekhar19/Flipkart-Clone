@@ -28,7 +28,7 @@
     padding: 15px;
     text-transform: capitalize;
 }
-.row-payment a
+.row-payment button
 {
     background-color: rgb(3, 85, 93);
     text-decoration: none;

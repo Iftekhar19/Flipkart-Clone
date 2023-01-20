@@ -16,11 +16,11 @@ const changeHandler=(e)=>
             <label className={styles["first-child"]} htmlFor="">
               category
             </label>
-            <select className={styles["last-child"]} name="category" defaultValue={category} onChange={changeHandler} disabled>
-              <option value="all">All</option>
+            <select className={styles["last-child"]} name="category" defaultValue={category} onChange={changeHandler} id="disabled" >
+              {/* <option value="all">All</option>
               <option value="clothing">Clothing</option>
               <option value="electronics">Electronics</option>
-              <option value="jewelery">Jewelery</option>
+              <option value="jewelery">Jewelery</option> */}
               
             </select>
           </div>
