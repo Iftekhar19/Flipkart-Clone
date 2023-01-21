@@ -1,12 +1,15 @@
 {
   "name": "react-boilerplate",
+  "homepage": "https://Iftekhar19.github.io/Flipkart-Clone---React-Project---y16nqla1myzs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cypress run  --headless --reporter mochawesome",
     "start": "webpack-dev-server --mode development --watch --open --hot --port=3000",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,7 @@
   "dependencies": {
     "@google-pay/button-react": "^3.0.5",
     "axios": "^1.2.2",
+    "gh-pages": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^8.0.5",
