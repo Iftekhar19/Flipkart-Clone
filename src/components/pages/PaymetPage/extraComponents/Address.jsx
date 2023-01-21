@@ -1,8 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import GooglePayButton from "@google-pay/button-react"
+import {useSelector} from "react-redux";
 import styles from "./Address.module.css"
 
+
 const Address = () => {
+  const {cartValue:price,cart}=useSelector((state)=>state);
   const navigate=useNavigate()
     
   return (
@@ -38,7 +42,7 @@ const Address = () => {
           <input className={styles["second"]} required maxLength="6" type="text" placeholder='Enter State' />
         </div>
         <div className={styles["row-ud"]}></div>
-        <div className={styles["heading"]}>
+        {/* <div className={styles["heading"]}>
             <h2>Card Details</h2>
         </div>
         <div className={styles["row"]}>
@@ -53,10 +57,51 @@ const Address = () => {
           <label htmlFor="email" className={styles["first1"]}>CVV *</label>  
           <input className={styles["second"]} required maxLength="3" minLength="3"  type="password" placeholder='Enter CVV' />
         </div>
-        <div className={styles["row-ud"]}></div>
+        <div className={styles["row-ud"]}></div> */}
         <div className={styles["action-controls"]}>
          <button type='button' form='none' className={styles["cancel"]} onClick={()=>navigate("/cart")}>Cancel Payment</button>
-         <button type='submit'  className={styles["confirm"]}>Proceed</button>
+         {/* <button type='submit'  className={styles["confirm"]}> */}
+         <GooglePayButton
+  environment="TEST"
+  paymentRequest={{
+    
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods: [
+      {
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['MASTERCARD', 'VISA'],
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId',
+          },
+        },
+      },
+    ],
+    merchantInfo: {
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant',
+    },
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: price+"",
+      currencyCode: 'INR',
+      countryCode: 'IN',
+    },
+  }}
+  onLoadPaymentData={paymentRequest => {
+    console.log('load payment data', paymentRequest);
+    navigate("/confirm")
+  }}
+ 
+/>
+         
         </div>
       </form>
 

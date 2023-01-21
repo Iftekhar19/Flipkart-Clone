@@ -5,7 +5,9 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const navigate=useNavigate();
   const [val,setVal]=useState("");
+  // const [name,setName]=useState(null);
   const {cart}=useSelector(state=>state);
+  let name=localStorage.getItem("Flipkartuser");
   const push=()=>
   {
     if(val.trim()==="")
@@ -19,10 +21,7 @@ const Navbar = () => {
     
     
   }
-  useEffect(()=>
-  {
 
-  },[])
   return (
     <div className={styles["nav-container"]}>
       <nav className={styles["navbar"]}>
@@ -44,7 +43,8 @@ const Navbar = () => {
           </div>
         </section>
         <section className={styles["info"]}>
-          <span className={styles["name"]}>iftekhar</span>
+         { name ? <span className={styles["name"]}>{JSON.parse(name).id}</span>:
+          <Link  to="login" className={styles["name"]}>Log In</Link>}
           <div className={styles["more"]}>
             <div className={styles["mores"]}>
               <span>more </span>

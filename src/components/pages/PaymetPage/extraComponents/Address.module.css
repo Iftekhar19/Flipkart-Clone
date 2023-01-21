@@ -61,13 +61,15 @@
 .cancel
 {
    flex: 1; 
-   padding: 10px 5px;
+   /* padding: 10px 5px; */
    border: none;
    outline: none;
    background-color: red;
    color: white;
    font-weight: bold;
    cursor: pointer;
+   padding: 1rem 0.5rem;
+   border-radius: 37px;
 }
 .confirm
 {

@@ -81,6 +81,11 @@
 {
     padding: 0.8rem;
 }
+a.name
+{
+    text-decoration: none;
+    color: white;
+}
 .info .more
 {
     position: relative;

@@ -25,7 +25,7 @@ const RightSignUp = () => {
   return (
     <section className={styles["right-side"]}>
       <form action="" onSubmit={subHandler}>
-        <input type="text" placeholder='Enter Mobile Number/Email Id' className={styles["input-field"]} required name="id" value={data.id} onChange={changeHander} />
+        <input type="text" placeholder='Enter Name' className={styles["input-field"]} required name="id" value={data.id} onChange={changeHander} />
         <input type="password" placeholder='Enter Password' className={styles["input-field"]} required name="password" value={data.password} onChange={changeHander}/>
         <span className={styles["terms-condition"]}>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</span>
          <button type='submit' className={styles["login-btn"]} >Sign Up</button>

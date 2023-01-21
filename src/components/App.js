@@ -15,6 +15,7 @@ import CartContainer from './pages/cart/CartContainer';
 import LogIn from './pages/logInPage/LogIn';
 import SignUp from './pages/signUpPage/SignUp';
 import Payment from './pages/PaymetPage/Payment';
+import Confirm from './pages/confirmOrder/Confirm';
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,7 @@ useEffect(()=>
       <Route exact path="/login" element={<LogIn/>}/>
       <Route exact path="/signup" element={<SignUp/>}/>
       <Route exact path="/payment" element={<Payment/>}/>
+      <Route exact path="/confirm" element={<Confirm/>}/>
       </Routes>
       </BrowserRouter></>
 
