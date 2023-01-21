@@ -1,15 +1,15 @@
 {
   "name": "react-boilerplate",
-  "homepage": "https://Iftekhar19.github.io/Flipkart-Clone---React-Project---y16nqla1myzs",
+  "homepage": "https://Iftekhar19.github.io/Flipkart-Clone",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "cypress run  --headless --reporter mochawesome",
     "start": "webpack-dev-server --mode development --watch --open --hot --port=3000",
-    "build": "webpack --mode production",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
