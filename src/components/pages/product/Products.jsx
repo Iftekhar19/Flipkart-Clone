@@ -120,7 +120,7 @@ const Products = () => {
       price={formData.price}
       category={formData.category} changeFunction={chnageFunction} setFilter={setApplyFilter}
       resetFilter={setResetFilter}/>
-      <Allproductcontainer data={myData} setMyData={setMyData} />
+      <Allproductcontainer data={myData}  />
     </section>
   )
 }

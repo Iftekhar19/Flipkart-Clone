@@ -3,7 +3,7 @@ import styles from "./Allproductcontainer.module.css";
 import Pagination from './Pagination';
 import ProductCard from './ProductCard';
 // import { useSelector } from 'react-redux';
-const Allproductcontainer = ({data,setMyData}) => {
+const Allproductcontainer = ({data}) => {
   const [num,setNum]=useState(0);
   // const data=useSelector((state)=>state.allData)
   return (
